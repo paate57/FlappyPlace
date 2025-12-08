@@ -124,7 +124,7 @@
             break;
             
           case 'drawSuccess':
-            cooldownUntil = msg.cooldownUntil;
+            cooldownUntil = Date.now() + msg.cooldownMs;
             updateCooldown();
             break;
         }

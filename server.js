@@ -233,7 +233,7 @@ wss.on('connection', (ws) => {
           
           ws.send(JSON.stringify({
             type: 'drawSuccess',
-            cooldownUntil: Date.now() + COOLDOWN_MS
+            cooldownMs: COOLDOWN_MS
           }));
         }
       }
