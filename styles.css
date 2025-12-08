@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Evita selezioni accidentali durante il drag */
+html, body, #container {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #1a1a1a;
+  color: #fff;
+  overflow: hidden;
+}
+
+#container {
+  display: flex;
+  height: 100vh;
+}
+
+#sidebar {
+  width: 250px;
+  background: #2a2a2a;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+#canvas-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+#canvas {
+  position: absolute;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+#minimap-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.8);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#minimap {
+  border: 2px solid #fff;
+  cursor: pointer;
+  image-rendering: pixelated;
+}
+
+#viewport-indicator {
+  position: absolute;
+  border: 2px solid #00ff00;
+  pointer-events: none;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.color-btn {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 3px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.color-btn:hover {
+  transform: scale(1.1);
+}
+
+.color-btn.selected {
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+#cooldown {
+  background: #444;
+  height: 30px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  margin: 10px 0;
+}
+
+#cooldown-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #ff4444, #ff8844);
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+#cooldown-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.controls {
+  margin: 20px 0;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  background: #444;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background: #555;
+}
+
+.btn:active {
+  background: #333;
+}
+
+.info {
+  font-size: 12px;
+  color: #aaa;
+  margin: 10px 0;
+}
+
+#zoom-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.zoom-btn {
+  width: 40px;
+  height: 40px;
+  background: rgba(0,0,0,0.8);
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#status {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.8);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-connected {
+  background: #00ff00;
+}
+
+.status-disconnected {
+  background: #ff0000;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "flappy-place",
+  "version": "1.0.0",
+  "description": "Canvas collaborativo in tempo reale",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.14.2",
+    "pngjs": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=16.x"
+  }
+}
