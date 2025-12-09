@@ -1,6 +1,3 @@
-// server.js
-// Server Node.js per canvas collaborativo 2000x2000 pixel
-// Versione ottimizzata per Render.com
 
 const WebSocket = require('ws');
 const http = require('http');
@@ -8,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const { PNG } = require('pngjs');
 
-// Configurazione
+
 const CANVAS_SIZE = 2000;
 const COOLDOWN_MS = 5000;
 const UPDATE_BATCH_INTERVAL = 100;
